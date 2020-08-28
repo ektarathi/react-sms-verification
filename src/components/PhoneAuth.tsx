@@ -46,7 +46,7 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 	const [errorMessage, setErrorMessage] = React.useState("");
 
 	const validatePhoneNumber = () => {
-		var regexp = /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{8,16})$/;
+		var regexp = /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$/;
 		return regexp.test(phone);
 	};
 
