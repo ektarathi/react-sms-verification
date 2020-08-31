@@ -71,7 +71,7 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 		);
 		if(phone === "") {
 			setError(true);
-			setErrorMessage("Please enter a phone number");
+			setErrorMessage("Please enter a 10 digit phone number");
 		} else if (validatePhoneNumber()) {
 			firebase
 				.auth()
