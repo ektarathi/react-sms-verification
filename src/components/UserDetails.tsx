@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		details: {
 			textAlign: "left",
 			margin: "auto",
-			width: "65%",
 			"& > *": {
 				margin: theme.spacing(1),
 				width: "50ch",
@@ -49,7 +48,7 @@ const UserDetails = (props: any) => {
 			>
 				<Grid item xs={12} sm={6}>
 					<div className={classes.details}>
-						<Typography variant="h4" component="h4">
+						<Typography variant="h4" component="h4" style={{width: 'auto'}}>
 							You're all set!
 						</Typography>
 						<Typography variant="body2">

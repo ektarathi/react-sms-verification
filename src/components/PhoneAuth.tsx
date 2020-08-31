@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		form: {
 			textAlign: "left",
 			margin: "auto",
-			width: "65%",
 			"& > *": {
 				margin: theme.spacing(1),
 				width: "50ch",
@@ -100,7 +99,7 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 			>
 				<Grid item xs={12} sm={6}>
 					<form className={classes.form}>
-						<Typography variant="h4" component="h4">
+						<Typography variant="h4" component="h4" style={{width: 'auto'}}>
 							Verify your number
 						</Typography>
 						{confirmResult ? (
