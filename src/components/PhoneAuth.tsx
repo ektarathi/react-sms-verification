@@ -46,7 +46,7 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 	const [errorMessage, setErrorMessage] = React.useState("");
 
 	const validatePhoneNumber = () => {
-		var regexp = /^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$/;
+		var regexp = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm;
 		return regexp.test(phone);
 	};
 
@@ -69,8 +69,10 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 				},
 			}
 		);
-
-		if (validatePhoneNumber()) {
+		if(phone === "") {
+			setError(true);
+			setErrorMessage("Please enter a phone number");
+		} else if (validatePhoneNumber()) {
 			firebase
 				.auth()
 				.signInWithPhoneNumber(phone, appVerifier)
@@ -95,7 +97,6 @@ const PhoneAuth: React.SFC<PhoneAuthProps> = () => {
 				spacing={3}
 				alignItems="center"
 				justify="center"
-				style={{ minHeight: "100vh" }}
 			>
 				<Grid item xs={12} sm={6}>
 					<form className={classes.form}>

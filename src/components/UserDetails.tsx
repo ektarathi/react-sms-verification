@@ -46,7 +46,6 @@ const UserDetails = (props: any) => {
 				spacing={3}
 				alignItems="center"
 				justify="center"
-				style={{ minHeight: "100vh" }}
 			>
 				<Grid item xs={12} sm={6}>
 					<div className={classes.details}>
